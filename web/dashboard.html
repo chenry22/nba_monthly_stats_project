@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>NBA Career Lab</title>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/4.4.1/chart.umd.min.js"></script>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<header>
+  <h1>NBA Career Lab</h1>
+  <span>ETL Pipeline Dashboard · SQLite</span>
+</header>
+
+<div class="layout">
+
+  <aside>
+    <div class="sidebar-label">Players</div>
+    <input id="search" type="text" placeholder="filter..." autocomplete="off">
+    <div id="player-list">
+      <div class="loading">
+        <div class="dot"></div><div class="dot"></div><div class="dot"></div>
+      </div>
+    </div>
+  </aside>
+
+  <main>
+    <div class="tabs">
+      <button class="tab active" data-tab="overview">Overview</button>
+      <button class="tab" data-tab="charts">Charts</button>
+      <button class="tab" data-tab="split">Career Split</button>
+      <button class="tab" data-tab="leaderboard">Leaderboard</button>
+    </div>
+
+    <!-- Overview -->
+    <div class="tab-panel active" id="tab-overview">
+      <div class="empty">Select a player to begin.</div>
+    </div>
+
+    <!-- Charts -->
+    <div class="tab-panel" id="tab-charts">
+      <div class="empty">Select a player to see charts.</div>
+    </div>
+
+    <!-- Career Split -->
+    <div class="tab-panel" id="tab-split">
+      <div class="empty">Select a player to see career split.</div>
+    </div>
+
+    <!-- Leaderboard -->
+    <div class="tab-panel" id="tab-leaderboard">
+      <div class="lb-toolbar">
+        <span class="lb-toolbar-label">Role</span>
+        <button class="lb-btn active" data-role="scorer">Scorer</button>
+        <button class="lb-btn" data-role="playmaker">Playmaker</button>
+        <button class="lb-btn" data-role="defender">Defender</button>
+        <span style="flex-grow: 10"></span>
+        <label>Min Games: <input id="min-games" type="number" min="0" value='0' max="16"/></label>
+      </div>
+      <div id="lb-content">
+        <div class="empty">Click a role to load the leaderboard.</div>
+      </div>
+    </div>
+
+  </main>
+</div>
+
+<script src="main.js"></script>
+</body>
+</html>
