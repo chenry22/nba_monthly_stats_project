@@ -4,6 +4,29 @@ from nba_etl.extract import search_player, get_player_info, get_game_logs, get_a
 from nba_etl.transform import transform
 from nba_etl.load import get_connection, initialize_db, upsert_player, load_monthly_stats
 
+players = [
+    # "Keegan Murray", "Davion Mitchell", "Patrick Baldwin Jr.", 
+    # "Maxime Raynaud", "Rob Dillingham", "Jared McCain"
+    # "Jimmy Butler", "Shai Gilgeous-Alexander", "Jalen Brunson",
+    # "Anthony Edwards", "Marcus Smart", "Jeremy Sochan",
+    # "Keldon Johnson", "Darius Garland", "Rudy Gobert"
+    # "Victor Wembanyama", "Zach Lavine", "Dario Saric",
+    # "Michael Jordan", "Jevon Carter", "Giannis Antetokounmpo",
+    # "Ja Morant",  "Tobias Harris",
+    # "Cade Cunningham", "Kristaps Porzingis", "Jeremy Lin"
+    # "Alex Caruso", "Zach Lavine", 
+    # "Anthony Davis", "Cason Wallace", "Mikal Bridges",
+    # "Aaron Gordon", "Jake Laravia", "Paolo Banchero",
+    # "Tyrese Maxey", "Naz Reid", "Jalen Williams"
+    # "De'Aaron Fox", "Karl Anthony-Towns", "Andrew Wiggins", 
+    # "Greg Oden", "Harrison Barnes", "Nikola Jokic"
+    # "Derrick White", "Steve Nash", "Tyus Jones",
+    # "Luke Kornet", "Zion Williamson", "Mitchell Robinson",
+    # "Joel Embiid", "Dylan Harper", "Derrick Jones Jr.",
+    # "Luka Doncic", "Lebron James", "Tyrese Haliburton",
+    # "Aaron Nesmith", "Jalen Johnson", "Dyson Daniels"
+]
+
 def run_pipeline(player_names: list[str]):
     """
     Main entry point. Pass a list of player names.
@@ -44,26 +67,4 @@ DROP VIEW career_role_scores'''
 
 
 if __name__ == "__main__":
-    run_pipeline([
-        # "Keegan Murray", "Davion Mitchell", "Patrick Baldwin Jr.", 
-        # "Maxime Raynaud", "Rob Dillingham", "Jared McCain"
-        # "Jimmy Butler", "Shai Gilgeous-Alexander", "Jalen Brunson",
-        # "Anthony Edwards", "Marcus Smart", "Jeremy Sochan",
-        # "Keldon Johnson", "Darius Garland", "Rudy Gobert"
-        # "Victor Wembanyama", "Zach Lavine", "Dario Saric",
-        # "Michael Jordan", "Jevon Carter", "Giannis Antetokounmpo",
-        # "Ja Morant",  "Tobias Harris",
-        # "Cade Cunningham", "Kristaps Porzingis", "Jeremy Lin"
-        # "Alex Caruso", "Zach Lavine", 
-        # "Anthony Davis", "Cason Wallace", "Mikal Bridges",
-        # "Aaron Gordon", "Jake Laravia", "Paolo Banchero",
-        # "Tyrese Maxey", "Naz Reid", "Jalen Williams"
-        # "De'Aaron Fox", "Karl Anthony-Towns", "Andrew Wiggins", 
-        # "Greg Oden", "Harrison Barnes", "Nikola Jokic"
-        # "Derrick White", "Steve Nash", "Tyus Jones",
-        # "Luke Kornet", "Zion Williamson", "Mitchell Robinson",
-        # "Joel Embiid", "Dylan Harper", "Derrick Jones Jr.",
-        # "Luka Doncic", "Lebron James", "Tyrese Haliburton",
-        # "Aaron Nesmith", 
-        "Jalen Johnson", "Dyson Daniels"
-    ])
+    run_pipeline(players)

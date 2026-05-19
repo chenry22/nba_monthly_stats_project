@@ -1,4 +1,6 @@
 nba_api
 pandas
-python-dateutil
 tqdm
+flask
+flask-cors
+requests
